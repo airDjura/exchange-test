@@ -8,8 +8,8 @@
 ## Setup project
 #### Install dependencies, initialize env and generate app key
 ``` 
-docker compose exec php composer install &&
 cp .env.example .env &&
+docker compose exec php composer install &&
 docker compose exec php php artisan key:generate
 ```
 In `.env` file set `CURRENCY_LAYER_API_KEY` which can be obtained [here](https://currencylayer.com/dashboard)
