@@ -14,6 +14,8 @@ docker compose exec php php artisan key:generate
 ```
 In `.env` file set `CURRENCY_LAYER_API_KEY` which can be obtained [here](https://currencylayer.com/dashboard)
 
+And `SOURCE_CURRENCY` which is the currency you want to convert from. (Default is `USD`)
+
 #### Setup database and fetch currencies rates
 ```
 docker compose exec php php artisan migrate --seed &&

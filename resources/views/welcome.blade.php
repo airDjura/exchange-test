@@ -18,7 +18,7 @@
     class="bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
     <div id="app" class="max-w-2xl mx-auto p-6 lg:p-8">
         <div class="flex justify-center">
-            <h4 class="text-2xl font-bold dark:text-white">Exchange from USD</h4>
+            <h4 class="text-2xl font-bold dark:text-white">Exchange from {{$sourceCurrency}}</h4>
         </div>
         <div>
             <form @submit.prevent="calculate">
@@ -114,7 +114,7 @@ https://cdn.jsdelivr.net/npm/axios@1.6.5/dist/axios.min.js
                 axios.get('/api/currencies/exchange/calculate', {
                     params: {
                         amount: amount.value,
-                        fromCurrency: 'USD',
+                        fromCurrency: '{{$sourceCurrency}}',
                         toCurrency: toCurrency.value
                     }
                 }).then(response => {
@@ -130,7 +130,7 @@ https://cdn.jsdelivr.net/npm/axios@1.6.5/dist/axios.min.js
                 orderLoading.value = true
                 axios.post('/api/currencies/exchange/order', {
                     amount: amount.value,
-                    fromCurrency: 'USD',
+                    fromCurrency: '{{$sourceCurrency}}',
                     toCurrency: toCurrency.value
                 }).then(response => {
                     order.value = response.data

@@ -2,5 +2,5 @@
     # Order
     ## Currency: {{ $toCurrencyName }}
     ## Currency amount: {{ $toCurrencyAmount }}
-    ## Total paid: {{ $amountPaid }} - USD
+    ## Total paid: {{ $amountPaid }} - {{$fromCurrencyName}}
 @endcomponent

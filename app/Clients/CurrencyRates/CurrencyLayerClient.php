@@ -29,7 +29,7 @@ class CurrencyLayerClient implements CurrencyClient
         $currencies = implode(',', array_keys(config('currency.currencies')));
 
         $response = $this->client->get('/live', [
-            'source' => $this->config['source_currency'],
+            'source' => config('currency.source_currency'),
             'currencies' => $currencies,
             'format' => 1,
         ]);

@@ -31,6 +31,7 @@ class OrderCreatedMail extends Mailable implements ShouldQueue
         return new Content(
             markdown: 'emails.order-created',
             with: [
+                'fromCurrencyName' => $this->order->fromCurrency->name,
                 'toCurrencyName' => $this->order->toCurrency->name,
                 'toCurrencyAmount' => $this->order->amount_of_currency_purchased,
                 'amountPaid' => $this->order->amount_paid,

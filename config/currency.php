@@ -6,6 +6,8 @@ return [
     // Default third party client
     'default' => env('CURRENCY_CLIENT', 'currency_layer'),
 
+    'source_currency' => env('SOURCE_CURRENCY', 'USD'),
+
     'sendTo' => env('EXCHANGE_ORDER_EMAIL', 'order@example.com'),
 
     // All available third party clients
@@ -13,7 +15,6 @@ return [
         'currency_layer' => [
             'class' => App\Clients\CurrencyRates\CurrencyLayerClient::class,
             'api_key' => env('CURRENCY_LAYER_API_KEY'),
-            'source_currency' => 'USD',
         ]
     ],
 

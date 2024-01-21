@@ -6,8 +6,11 @@ class WelcomeController extends Controller
 {
     public function index()
     {
-        $currencies = \App\Models\Currency::whereNot('name', 'USD')->get();
+        $sourceCurrency = config('currency.source_currency');
 
-        return view('welcome', compact('currencies'));
+        $currencies = \App\Models\Currency::whereNot('name', $sourceCurrency)->get();
+
+
+        return view('welcome', compact('currencies', 'sourceCurrency'));
     }
 }
